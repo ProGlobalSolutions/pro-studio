@@ -25,7 +25,8 @@ import {
   MapPin,
   Home,
   Users,
-  Calendar
+  Calendar,
+  Mic   // ✅ ADD THIS
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -72,13 +73,11 @@ const Navbar = () => {
               </a>
             ))}
             <a 
-              href="https://wa.me/919442825976"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#B91C1C] text-white px-5 py-2 rounded-full font-medium shadow-sm transition-all duration-300 hover:bg-black hover:shadow-[0_0_12px_rgba(239,68,68,0.8)] hover:scale-105"
-            >
-              Book Studio
-            </a>
+  href="#contact"
+  className="bg-primary hover:bg-primary-hover text-white px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg shadow-primary/20 inline-block"
+>
+  Book Now
+</a>
           </div>
 
           {/* Mobile Toggle */}
@@ -224,14 +223,66 @@ const Hero = () => {
 };
 const Services = () => {
   const services = [
-    { title: 'Studio Rental', icon: <Camera className="text-primary" size={32} /> },
-    { title: 'Creative Product Photography', icon: <ShoppingBag className="text-primary" size={32} /> },
-    { title: 'E-Commerce Photography', icon: <ShoppingBag className="text-primary" size={32} /> },
-    { title: 'Product Videography', icon: <Video className="text-primary" size={32} /> },
-    { title: 'Branding', icon: <Palette className="text-primary" size={32} /> },
-    { title: 'Wedding Photography', icon: <Heart className="text-primary" size={32} /> },
-    { title: 'Digital Marketing', icon: <TrendingUp className="text-primary" size={32} /> },
-    { title: 'Graphic Design', icon: <Layout className="text-primary" size={32} /> },
+    {
+      title: 'Studio Rental',
+      desc: 'A fully-equipped creative space with professional lighting and backdrops for your projects.',
+      icon: <Camera className="text-primary" size={32} />
+    },
+    {
+      title: 'Creative Product Photography',
+      desc: 'Artistic and high-concept photos that make your products stand out from competitors.',
+      icon: <ShoppingBag className="text-primary" size={32} />
+    },
+    {
+      title: 'E-Commerce Photography',
+      desc: 'Clean, consistent product images optimized for online stores and conversions.',
+      icon: <ShoppingBag className="text-primary" size={32} />
+    },
+    {
+      title: 'Product Videography',
+      desc: 'Engaging promotional videos showcasing your product features and real usage.',
+      icon: <Video className="text-primary" size={32} />
+    },
+    {
+      title: 'Branding',
+      desc: 'Building strong brand identity from logo design to complete visual systems.',
+      icon: <Palette className="text-primary" size={32} />
+    },
+    {
+      title: 'Wedding Photography',
+      desc: 'Capturing your special moments with timeless, emotional storytelling.',
+      icon: <Heart className="text-primary" size={32} />
+    },
+    {
+      title: 'Digital Marketing',
+      desc: 'Strategic SEO, social media, and ad campaigns to grow your online presence.',
+      icon: <TrendingUp className="text-primary" size={32} />
+    },
+    {
+      title: 'Graphic Design',
+      desc: 'Creative designs for digital and print including posters, banners, and branding.',
+      icon: <Layout className="text-primary" size={32} />
+    },
+    {
+      title: 'Professional Editing Studio',
+      desc: 'High-end photo and video editing with color grading and cinematic finishing.',
+      icon: <Video className="text-primary" size={32} />
+    },
+    {
+      title: 'Dubbing Studio',
+      desc: 'Professional voice recording and audio production with studio-grade clarity.',
+      icon: <Mic className="text-primary" size={32} />
+    },
+    {
+      title: 'Fashion Photography',
+      desc: 'Stylish shoots for models, brands, and portfolios with creative direction.',
+      icon: <Camera className="text-primary" size={32} />
+    },
+    {
+      title: 'Ads, Posters & Banners',
+      desc: 'Eye-catching promotional creatives designed to attract and convert audiences.',
+      icon: <Layout className="text-primary" size={32} />
+    }
   ];
 
   return (
@@ -247,14 +298,19 @@ const Services = () => {
             <motion.div 
               key={index}
               whileHover={{ y: -10 }}
-              className="bg-white p-10 rounded-2xl card-shadow text-center transition-all duration-300 group"
+              className="bg-white p-8 rounded-2xl card-shadow text-center transition-all duration-300 group"
             >
               <div className="mb-6 flex justify-center transform group-hover:scale-110 transition-transform duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold text-text-main group-hover:text-primary transition-colors">
+
+              <h3 className="text-lg font-bold text-text-main group-hover:text-primary transition-colors mb-2">
                 {service.title}
               </h3>
+
+              <p className="text-sm text-text-muted leading-relaxed">
+                {service.desc}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -262,7 +318,6 @@ const Services = () => {
     </section>
   );
 };
-
 const Work = () => {
   const works = [
     { title: 'Wedding Shoot', category: 'Photography' },
