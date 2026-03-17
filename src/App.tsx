@@ -4,6 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import logo from './assets/logo.webp'
 import herobg from './assets/hero.mp4'
 import { 
   Phone, 
@@ -43,7 +44,7 @@ const Navbar = () => {
     { name: 'Services', href: '#services', icon: <Layout size={20} /> },
     { name: 'Our Work', href: '#work', icon: <Camera size={20} /> },
     { name: 'Studio Rental', href: '#studio', icon: <Video size={20} /> },
-    { name: 'Our Clients', href: '#', icon: <Users size={20} /> },
+   
     { name: 'Contact Us', href: '#contact', icon: <Phone size={20} /> },
     { name: 'Book Studio', href: '#', icon: <Calendar size={20} />, special: true },
   ];
@@ -52,10 +53,13 @@ const Navbar = () => {
     <>
       <nav className="bg-white border-b border-gray-200 py-4">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <a href="#" className="text-2xl font-display font-bold tracking-tighter text-primary">
-            PRO STUDIOS
-          </a>
-
+          <a href="#" className="flex items-center">
+  <img 
+  src={logo} 
+  alt="ProStudio Logo" 
+  className="h-16 md:h-20 lg:h-24 w-auto object-contain"
+/>
+</a>
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
@@ -405,17 +409,24 @@ const Footer = () => {
   return (
     <footer className="bg-bg-site pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        
+        {/* GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-center sm:text-left">
+
           {/* Col 1 */}
-          <div>
-            <h3 className="text-2xl font-display font-bold text-primary mb-6">PRO STUDIOS</h3>
+          <div className="flex flex-col items-center sm:items-start">
+            <img 
+  src={logo} 
+  alt="ProStudio Logo" 
+  className="h-16 md:h-20 lg:h-24 mb-6 object-contain"
+/>
             <p className="text-text-muted leading-relaxed">
               Elevating your brand through professional photography and creative digital solutions. Based in the heart of Madurai.
             </p>
           </div>
 
-          {/* Col 2 */}
-          <div>
+          {/* Col 2 (hidden on mobile) */}
+          <div className="hidden sm:block">
             <h4 className="text-lg font-bold mb-6">Our Services</h4>
             <ul className="space-y-4 text-text-muted">
               <li><a href="#" className="hover:text-primary transition-colors">Product Photography</a></li>
@@ -426,7 +437,7 @@ const Footer = () => {
           </div>
 
           {/* Col 3 */}
-          <div>
+          <div className="flex flex-col items-center sm:items-start">
             <h4 className="text-lg font-bold mb-6">Quick Links</h4>
             <ul className="space-y-4 text-text-muted">
               <li><a href="#home" className="hover:text-primary transition-colors">Home</a></li>
@@ -437,32 +448,49 @@ const Footer = () => {
           </div>
 
           {/* Col 4 */}
-          <div>
+          <div className="flex flex-col items-center sm:items-start">
             <h4 className="text-lg font-bold mb-6">Our Offices</h4>
+
             <div className="space-y-4 text-text-muted">
-              <div className="flex items-start">
+
+              {/* Address */}
+              <div className="flex items-start justify-center sm:justify-start text-center sm:text-left">
                 <MapPin className="text-primary mr-3 mt-1 shrink-0" size={18} />
                 <p>4-4-35A, 1st Street Railor Nagar, Koodal Nagar, Madurai</p>
               </div>
-              <div className="flex items-center">
+
+              {/* Phone 1 */}
+              <div className="flex items-center justify-center sm:justify-start">
                 <Phone className="text-primary mr-3 shrink-0" size={18} />
                 <p>+91 94428 25976</p>
               </div>
-              <div className="flex items-center">
+
+              {/* Phone 2 */}
+              <div className="flex items-center justify-center sm:justify-start">
                 <Phone className="text-primary mr-3 shrink-0" size={18} />
                 <p>+91 93606 20595</p>
               </div>
-              <div className="flex space-x-4 pt-4">
-                <a href="#" className="bg-white p-2 rounded-full shadow-sm hover:text-primary transition-all"><Instagram size={20} /></a>
-                <a href="#" className="bg-white p-2 rounded-full shadow-sm hover:text-primary transition-all"><Facebook size={20} /></a>
+
+              {/* Social Icons */}
+              <div className="flex justify-center sm:justify-start space-x-4 pt-4">
+                <a href="#" className="bg-white p-2 rounded-full shadow-sm hover:text-primary transition-all">
+                  <Instagram size={20} />
+                </a>
+                <a href="#" className="bg-white p-2 rounded-full shadow-sm hover:text-primary transition-all">
+                  <Facebook size={20} />
+                </a>
               </div>
+
             </div>
           </div>
+
         </div>
 
+        {/* Bottom */}
         <div className="border-t border-gray-200 pt-8 text-center text-text-muted text-sm">
           <p>© 2026 Pro Studios. All Rights Reserved.</p>
         </div>
+
       </div>
     </footer>
   );
