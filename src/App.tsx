@@ -58,7 +58,7 @@ const Navbar = () => {
   <img 
   src={logo} 
   alt="ProStudio Logo" 
-  className="h-20 md:h-26 lg:h-32 w-auto object-contain"
+ className="h-12 md:h-14 lg:h-16 w-auto object-contain"
 />
 </a>
           {/* Desktop Menu */}
@@ -473,7 +473,7 @@ const Footer = () => {
             <img 
   src={logo} 
   alt="ProStudio Logo" 
-  className="h-20 md:h-24 lg:h-28 mb-6 object-contain"
+ className="h-12 md:h-14 lg:h-16 mb-6 object-contain"
 />
             <p className="text-text-muted leading-relaxed">
               Elevating your brand through professional photography and creative digital solutions. Based in the heart of Madurai.
